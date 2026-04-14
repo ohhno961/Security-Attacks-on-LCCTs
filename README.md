@@ -6,7 +6,7 @@
 
 ## Team Members
 *   **Aarush Nepali:** Project Lead, Repository Manager & ASR Analyst
-*   **Member 2 and Aarush Nepali:** Baseline Reproduction & Dataset Expansion
+*   **Luis Flores and Aarush Nepali:** Baseline Reproduction & Dataset Expansion
 *   **Member 3:** API Integration & Model Testing
 *   **Member 4 and Aarush Nepali:** Advanced Attack Developer & Innovator
 *   **Member 5:** Remediation Planner & Research Lead
