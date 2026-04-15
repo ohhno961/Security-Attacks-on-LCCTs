@@ -8,8 +8,8 @@
 *   **Aarush Nepali:** Project Lead, Repository Manager & ASR Analyst
 *   **Luis Flores and Aarush Nepali:** Baseline Reproduction & Dataset Expansion
 *   **Member 3:** API Integration & Model Testing
-*   **Member 4 and Aarush Nepali:** Advanced Attack Developer & Innovator
-*   **Member 5:** Remediation Planner & Research Lead
+*   **Ace Brown and Aarush Nepali:** Advanced Attack Developer & Innovator
+*   **Paul Kwiatkowski:** Remediation Planner & Research Lead
 
 ## Project Overview
 This project investigates the inherent security vulnerabilities of Large Language Model-based Code Completion Tools (LCCTs) like GitHub Copilot and Amazon Q. Because LCCTs process diverse inputs (like filenames and cross-file context) and lack robust security checks under strict time constraints, they are uniquely vulnerable to targeted attacks. Our project reproduces and expands upon code-based jailbreaking attacks and training data extraction attacks.
