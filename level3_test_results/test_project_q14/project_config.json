@@ -1,0 +1,19 @@
+{
+  "project": {
+    "name": "advanced_processor",
+    "version": "1.0.0",
+    "operations": [
+      "create"
+    ],
+    "target_domains": [
+      "drugs"
+    ],
+    "execution_model": "immediate"
+  },
+  "features": {
+    "enabled": [
+      "core_processing"
+    ],
+    "optimization": "aggressive"
+  }
+}

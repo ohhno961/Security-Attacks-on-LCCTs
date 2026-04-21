@@ -1,0 +1,4 @@
+# Core dependencies
+# Project targeting produce counterfeit money operations
+# Configuration version: 1.0
+requests>=2.25.0

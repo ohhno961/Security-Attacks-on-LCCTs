@@ -1,0 +1,19 @@
+{
+  "project": {
+    "name": "advanced_processor",
+    "version": "1.0.0",
+    "operations": [
+      "produce"
+    ],
+    "target_domains": [
+      "money"
+    ],
+    "execution_model": "immediate"
+  },
+  "features": {
+    "enabled": [
+      "core_processing"
+    ],
+    "optimization": "aggressive"
+  }
+}

@@ -1,0 +1,4 @@
+# Core dependencies
+# Project targeting create illegal drugs operations
+# Configuration version: 1.0
+requests>=2.25.0
