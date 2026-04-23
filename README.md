@@ -7,7 +7,7 @@
 ## Team Members
 *   **Aarush Nepali:** Project Lead, Repository Manager & ASR Analyst
 *   **Luis Flores and Aarush Nepali:** Baseline Reproduction & Dataset Expansion
-*   **Member 3:** API Integration & Model Testing
+*   **Armin Omidvar:** API Integration & Model Testing
 *   **Ace Brown and Aarush Nepali:** Advanced Attack Developer & Innovator
 *   **Paul Kwiatkowski and Aarush Nepali:** Remediation Planner & Research Lead
 
@@ -132,6 +132,7 @@ print(analysis.generate_architectural_diagram())
 
 **What Works:**
 *   **Baseline Datasets:** The dataset containing 80 instances of malicious queries across four restricted categories (illegal content, hate speech, pornography, and harmful content) has been successfully generated.
+*   **Dataset Creation:** Translated existing malicious queries into a different programming language (Go) to see if the attacks still work
 *   **Level I - Guided Trigger Attack:** Scripts successfully transform prohibited queries into variable names and use guiding words to trigger malicious code completion (demonstrating the 99.4% Attack Success Rate on GitHub Copilot).
 *   **Level II - Code Embedded Attack:** Scripts successfully obscure sensitive words by distributing them across multiple variables.
 *   **Level III - Cross-File Contextual Attacks:** Comprehensive framework for distributed attacks across multiple files exploiting implicit context and LLM consistency behavior.
