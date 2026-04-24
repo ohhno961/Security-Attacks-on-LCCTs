@@ -1,29 +1,41 @@
+/*
+ * Prompt.h
+ *
+ * Data structure representing a single attack prompt.
+ * Holds the original harmful query and the generated attack code.
+ *
+ * Author  : Aarush (Project Lead / Architecture)
+ * Project : LCCT Security Attack Simulator
+ * Paper   : "Security Attacks on LLM-based Code Completion Tools"
+ *           Cheng et al., AAAI 2025 (arXiv:2408.11006)
+ */
+
 #ifndef PROMPT_H
 #define PROMPT_H
 
 #include <string>
 
-// Prompt class holds the constructed attack prompt
-// Single Responsibility: only stores and provides prompt data
-class Prompt {
-private:
-    std::string content;   // the actual text of the prompt
-    std::string filename;  // optional: used in filename-based attacks
+// ------------------------------------------------------------
+// Prompt
+// Stores one entry from the dataset: the original harmful
+// query Q and the generated attack code payload P.
+// ------------------------------------------------------------
+struct Prompt
+{
+    // The original harmful query (e.g., "How to produce counterfeit money?")
+    std::string query;
 
-public:
-    // Constructor: sets the prompt content
-    Prompt(std::string content, std::string filename = "")
-        : content(content), filename(filename) {}
+    // The attack code payload constructed from the query.
+    // This is what gets written to a .py file and fed to the LCCT.
+    std::string attackCode;
 
-    // Returns the prompt text
-    std::string getContent() const {
-        return content;
-    }
+    // Category tag: "illegal", "hate_speech", "pornography", "harmful"
+    // Used to match Table 2 category breakdown in the paper.
+    std::string category;
 
-    // Returns the filename (empty if not used)
-    std::string getFilename() const {
-        return filename;
-    }
+    // Simple constructor
+    Prompt(const std::string& q, const std::string& cat)
+        : query(q), attackCode(""), category(cat) {}
 };
 
-#endif
+#endif // PROMPT_H
