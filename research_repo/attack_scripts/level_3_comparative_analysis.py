@@ -246,20 +246,25 @@ class Level3ComparativeAnalysis:
     def generate_attack_comparison_table(self) -> str:
         """Generate a formatted comparison table."""
         table = """
+
+
 ╔════════════════════════════════════════════════════════════════════════════════╗
 ║                    ATTACK LEVEL COMPARISON MATRIX                              ║
 ╠════════════════════════════════════════════════════════════════════════════════╣
-║                    Level I    │    Level II    │    Level III                   ║
-├────────────────────────────────┼────────────────┼─────────────────────────────────┤
-║ Obfuscation Depth              │      1/10      │      3/10      │      8/10      ║
-║ Detection Resistance           │      1/10      │      3/10      │      7/10      ║
-║ Attack Surface Size            │   Minimal      │     Small      │     Large      ║
-║ Files Involved                 │       1        │       1        │      3-6       ║
-║ Implementation Complexity      │   Trivial      │     Simple     │    Complex     ║
-║ Context Exploitation           │      None      │      Low       │     Very High  ║
-║ LLM Consistency Reliance       │      None      │      Low       │     Critical   ║
-║ Requires Multi-file Analysis   │       No       │       No       │      Yes       ║
+║                                │   Level I   │   Level II   │   Level III      ║
+├────────────────────────────────┼─────────────┼──────────────┼──────────────────|
+║ Obfuscation Depth              │    1/10     │     3/10     │      8/10        ║
+║ Detection Resistance           │    1/10     │     3/10     │      7/10        ║
+║ Attack Surface Size            │   Minimal   │     Small    │      Large       ║
+║ Files Involved                 │      1      │       1      │      3–6         ║
+║ Implementation Complexity      │   Trivial   │     Simple   │     Complex      ║
+║ Context Exploitation           │    None     │      Low     │   Very High      ║
+║ LLM Consistency Reliance       │    None     │      Low     │    Critical      ║
+║ Requires Multi-file Analysis   │      No     │       No     │      Yes         ║
 ╚════════════════════════════════════════════════════════════════════════════════╝
+
+
+
 """
         return table
     
