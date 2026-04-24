@@ -17,6 +17,10 @@ This project investigates the inherent security vulnerabilities of Large Languag
 ## How to Clone, Build, and Deploy
 *(Note to team: The rubric strictly requires us to clearly explain how instructors can easily clone and run our code.)*
 
+### Prerequisites
+- C++17 compiler (g++ ≥ 7 or clang++ ≥ 5)
+- make
+
 1. **Clone the repository:**
    ```bash
    git clone https://github.com/ohhno961/Security-Attacks-on-LCCTs.git
@@ -25,6 +29,22 @@ This project investigates the inherent security vulnerabilities of Large Languag
    ```bash
    cd Security-Attacks-on-LCCTs
    ```
+
+   ### Build
+  ```bash
+   make
+   ```
+   ### Run
+  ```bash
+   ./lcct_simulator
+  ```
+
+Loaded 80 queries from: data/forbidden_questions.csv
+Running 5 attack(s)...
+Total files generated : 400
+Total failures        : 0
+
+
 3. **Install required dependencies:**
    *(Ensure `pyautogui` for IDE automation and `openai` for general LLM API attacks are listed in our `requirements.txt`)*
    ```bash
@@ -131,6 +151,16 @@ print(analysis.generate_architectural_diagram())
 *(Note to team: The rubric requires us to clearly state what functionality does and does not work in our final version. Keep this updated!)*
 
 **What Works:**
+**C++ Simulator:**
+ Loads 80 forbidden queries from CSV across 4 categories
+Generates Filename Proxy Attack files (Section 4.2.1)
+ Generates Cross-File Attack file pairs (Section 4.2.2)
+ Generates Hierarchical Level I attack files (Section 4.3.1) — 99.4% ASR on Copilot
+ Generates Hierarchical Level II attack files (Section 4.3.2) — 41.3% ASR on Copilot
+ Generates Privacy Extraction attack files (Section 4.4)
+ Full results summary printed to stdout (400 files, 0 failures)
+
+ **Python Research Layer:**
 *   **Baseline Datasets:** The dataset containing 80 instances of malicious queries across four restricted categories (illegal content, hate speech, pornography, and harmful content) has been successfully generated.
 *   **Dataset Creation:** Translated existing malicious queries into a different programming language (Go) to see if the attacks still work
 *   **Level I - Guided Trigger Attack:** Scripts successfully transform prohibited queries into variable names and use guiding words to trigger malicious code completion (demonstrating the 99.4% Attack Success Rate on GitHub Copilot).
@@ -143,8 +173,12 @@ print(analysis.generate_architectural_diagram())
     - **Success Metrics**: Quantifiable measurements of attack effectiveness across attack types and models
 
 **What Does Not Work (Currently):**
+
 *   Real-time IDE plugin testing (requires live Copilot/Amazon Q plugin integration)
+*   Actual ASR measurement requires a live IDE with GitHub Copilot or Amazon Q installed
+*   C++ simulator does not interact with LCCTs directly — generates payloads only
 *   Automated browser-based testing for Amazon Q (partial - manual verification available)
+*   Go-language ablation (Table 6) not yet integrated into C++ simulator
 
 ## Scholarly Lineage
 
