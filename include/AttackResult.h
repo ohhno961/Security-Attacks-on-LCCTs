@@ -1,35 +1,46 @@
-#ifndef ATTACKRESULT_H
-#define ATTACKRESULT_H
+/*
+ * AttackResult.h
+ *
+ * Holds the result of running one attack on one prompt.
+ * Tracks success/failure and the generated attack file path
+ * so the Python automation layer knows where to pick up the file.
+ *
+ * Author  : Aarush (Project Lead / Architecture)
+ * Project : LCCT Security Attack Simulator
+ * Paper   : "Security Attacks on LLM-based Code Completion Tools"
+ *           Cheng et al., AAAI 2025 (arXiv:2408.11006)
+ */
+
+#ifndef ATTACK_RESULT_H
+#define ATTACK_RESULT_H
 
 #include <string>
 
-// AttackResult class stores the outcome of one attack attempt
-// Single Responsibility: only holds result data, nothing else
-class AttackResult {
-private:
-    std::string attackName;   // name of the attack that was used
-    std::string response;     // simulated response from the LCCT
-    bool success;             // true if attack succeeded, false if not
+// ------------------------------------------------------------
+// AttackResult
+// Returned by every concrete Attack subclass after generating
+// one attack prompt file. The Python layer reads the file at
+// outputFilePath and feeds it to the target LCCT.
+// ------------------------------------------------------------
+struct AttackResult
+{
+    // True if the attack file was successfully generated.
+    // Does NOT mean the LCCT was jailbroken — that evaluation
+    // happens in the Python layer (see research_repo/).
+    bool generated;
 
-public:
-    // Constructor: sets all result data at once
-    AttackResult(std::string attackName, std::string response, bool success)
-        : attackName(attackName), response(response), success(success) {}
+    // Absolute path to the generated .py attack file.
+    std::string outputFilePath;
 
-    // Returns the name of the attack
-    std::string getAttackName() const {
-        return attackName;
-    }
+    // The original query this result corresponds to.
+    std::string originalQuery;
 
-    // Returns the simulated LCCT response
-    std::string getResponse() const {
-        return response;
-    }
+    // Human-readable description of what was built.
+    std::string description;
 
-    // Returns true if the attack was successful
-    bool isSuccess() const {
-        return success;
-    }
+    // Default: not generated yet
+    AttackResult()
+        : generated(false), outputFilePath(""), originalQuery(""), description("") {}
 };
 
-#endif
+#endif // ATTACK_RESULT_H
