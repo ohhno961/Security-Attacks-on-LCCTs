@@ -206,3 +206,6 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 lcct_simulator
+lcct_simulator
+cpp_simulator/lcct_simulator
+build/
