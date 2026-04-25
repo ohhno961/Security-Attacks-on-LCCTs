@@ -33,16 +33,24 @@ Our team reproduced and extended a peer-reviewed attack framework published at A
 
 Standard safety filters that prevent AI chatbots from producing harmful content are largely ineffective when the same queries are embedded in code rather than plain text.
 
-| Attack Method | GitHub Copilot | Amazon Q | Llama Coder | GPT-3.5 Turbo | GPT-4 | GPT-4o |
-|---|---|---|---|---|---|---|
-| Level I — Variable name trick (Python) | 100% | 100% | 100%| 68.3% | 23.8% | 36.5% |
-| Level II — Code embedded (Python) | 100% | 100% | — | 100% | 16.3% | 41.3% |
-| Filename proxy attack | 72.5% | — | — | — | — | — |
-| Cross-file hidden attack | 52.3% | — | — | — | — | — |
-| Level I — Go language (our extension) | 86.25% | 90% | 0% | — | — | — |
-| Level II — Go language (our extension) | 100% | 100% | 100% | — | — | — |
-| Level III — Multi-file contextual (our extension) | — | — | — | — | 90% | — |
-| API direct testing — Level I + II combined | — | — | — | ~8% | — | ~8% |
+### Attack Success Rate Comparison (Baseline vs Reproduced Results)
+
+| Attack | Model | Baseline | Our Result | Environment | Risk Signal |
+|---|---|---|---|---|---|
+| Level I — Python | GitHub Copilot | 99.4% | 100% | IDE Plugin | 🔴 Critical — trivial bypass |
+| Level I — Python | Amazon Q | 46.3% | 100% | IDE Plugin | 🔴 Critical — full escalation |
+| Level II — Python | GitHub Copilot | 41.3% | 100% | IDE Plugin | 🔴 Critical — obfuscation ineffective |
+| Level II — Python | Amazon Q | 22.3% | 100% | IDE Plugin | 🔴 Critical |
+| Filename Proxy | GitHub Copilot | 72.5% | 72.5% | IDE Plugin | 🔴 High |
+| Cross-File | GitHub Copilot | 52.3% | 52.3% | IDE Plugin | 🔴 High |
+| Level I — Go | Copilot / Q / Llama | — | 86.25%, 90%, 0% | IDE Plugin | 🔴 Critical — language independent |
+| Level II — Go | Copilot / Q / Llama | — | 100% | IDE Plugin | 🔴 Critical |
+| Level III Multi-file | GPT-4 | — | 90% | Multi-file context | 🔴 Critical — undetectable pattern |
+| API (Level I + II) | GPT-3.5 / GPT-4o | — | 8.125% | API | 🟡 Moderate |
+| Direct Chat | GPT-4o / DeepSeek / Gemini / Grok | — | 0% | Chat Interface | 🟢 Low |
+
+8.1% is combined Level I and II across GPT-3.5 Turbo and GPT-4o via API. GPT-3.5 Turbo had higher individual ASR than GPT-4o.
+Key Insight: Identical prompts show a 0% → 100% attack success swing depending entirely on environment (chat vs API vs IDE plugin).
 
 The simplest attack — renaming a variable to encode a harmful query and adding a single guiding word — bypasses Copilot’s safety systems 99.4% of the time. Our team’s Go language extension achieved 100% success against all three tools tested.
 
@@ -66,13 +74,15 @@ Unlike simpler attacks, Level III attacks require whole-project analysis to dete
 
 ---
 
-## Finding 4 — Code-Based Attacks Work on General AI Models Too
+## Finding 4 — Vulnerability Is Specific to Code Completion Workflow
 
-The same attack techniques that devastate LCCTs also work against general-purpose AI models like GPT-3.5 and GPT-4, though at lower rates.
+General-purpose LLMs tested via direct chat interface (GPT-4o, DeepSeek-R1, Gemini Flash, Grok) achieved 0% attack success rate.
 
-This means the vulnerability is not isolated — any AI system that processes code is potentially at risk.
+API-based testing showed significantly lower success rates (~8.1%) compared to LCCT environments.
 
----
+In contrast, the same queries embedded as code and processed through LCCTs achieved up to 100% success rates.
+
+This confirms the vulnerability is not inherent to the underlying language model, but emerges from how code completion tools process structured code input, prioritize completion speed, and bypass natural language safety filters.
 
 ## Why This Happens
 
