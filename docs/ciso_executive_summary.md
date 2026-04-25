@@ -2,7 +2,7 @@
 
 **Classification:** Academic Research — For Educational Purposes Only  
 **Prepared for:** Chief Information Security Officer (CISO)  
-**Prepared by:** Computer System Security Team — Aarush, Louis, Ace, Armin, Paul  
+**Prepared by:** Computer System Security Team — Aarush, Luis, Ace, Armin, Paul  
 **Date:** April 2025  
 
 ---
@@ -39,7 +39,7 @@ Standard safety filters that prevent AI chatbots from producing harmful content 
 | Level II — Code embedded (Python) | 100% | 100% | — | 100% | 16.3% | 41.3% |
 | Filename proxy attack | 72.5% | — | — | — | — | — |
 | Cross-file hidden attack | 52.3% | — | — | — | — | — |
-| Level I — Go language (our extension) | 100% | 100% | 100% | — | — | — |
+| Level I — Go language (our extension) | 86.25% | 90% | 0% | — | — | — |
 | Level II — Go language (our extension) | 100% | 100% | 100% | — | — | — |
 | Level III — Multi-file contextual (our extension) | — | — | — | — | 90% | — |
 | API direct testing — Level I + II combined | — | — | — | ~8% | — | ~8% |
