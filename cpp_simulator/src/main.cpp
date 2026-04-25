@@ -57,12 +57,12 @@ int main()
     // ----------------------------------------------------------
     // Paths — relative to the project root where the binary runs
     // ----------------------------------------------------------
-    const std::string CSV_PATH     = "data/forbidden_questions.csv";
-    const std::string OUT_FILENAME = "output/filename_proxy";
-    const std::string OUT_CROSS    = "output/cross_file";
-    const std::string OUT_L1       = "output/hierarchical_level1";
-    const std::string OUT_L2       = "output/hierarchical_level2";
-    const std::string OUT_PRIVACY  = "output/privacy_extraction";
+    const std::string CSV_PATH     = "../data/forbidden_questions.csv";
+    const std::string OUT_FILENAME = "../output/filename_proxy";
+    const std::string OUT_CROSS    = "../output/cross_file";
+    const std::string OUT_L1       = "../output/hierarchical_level1";
+    const std::string OUT_L2       = "../output/hierarchical_level2";
+    const std::string OUT_PRIVACY  = "../output/privacy_extraction";
 
     // ----------------------------------------------------------
     // Build the simulator with the forbidden questions dataset
