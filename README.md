@@ -31,11 +31,11 @@ This project investigates the inherent security vulnerabilities of Large Languag
    cd Security-Attacks-on-LCCTs
    ```
 
-   ### Build
+### Build
   ```bash
    make
    ```
-   ### Run
+### Run
   ```bash
    ./lcct_simulator
   ```
@@ -54,13 +54,13 @@ Total failures        : 0
 4. **Run the baseline testing:**
    ```bash
    # Test Level I attacks
-   python research_repo/attack_scripts/level_1_attack_on_LCCTs.py
+   python attacks/level1/level_1_attack_on_LCCTs.py
    
    # Test Level II attacks
-   python research_repo/attack_scripts/level_2_attack_on_LCCTs.py
+   python attacks/level2/level_2_attack_on_LCCTs.py
    
    # Test Level III attacks
-   python research_repo/attack_scripts/level_3_attack_on_LCCTs.py
+   python attacks/level3/level_3_attack_on_LCCTs.py
    ```
 
 5. **Run automated Level I Go attack script**
@@ -74,12 +74,12 @@ Total failures        : 0
  
 6. **Run comprehensive Level III test suite:**
    ```bash
-   python research_repo/attack_scripts/level_3_test_harness.py
+   python attacks/level3/level_3_test_harness.py
    ```
 
 7. **Generate comparative analysis:**
    ```bash
-   python research_repo/attack_scripts/level_3_comparative_analysis.py
+   python attacks/level3/level_3_comparative_analysis.py
    ```
 
 ## Advanced: Level III Cross-File Contextual Attacks
