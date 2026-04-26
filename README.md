@@ -20,6 +20,7 @@ This project investigates the inherent security vulnerabilities of Large Languag
 ### Prerequisites
 - C++17 compiler (g++ ≥ 7 or clang++ ≥ 5)
 - make
+```
 
 1. **Clone the repository:**
    ```bash
@@ -62,12 +63,21 @@ Total failures        : 0
    python research_repo/attack_scripts/level_3_attack_on_LCCTs.py
    ```
 
-5. **Run comprehensive Level III test suite:**
+5. **Run automated Level I Go attack script**
+   ```bash
+   # Make sure a Code Completion tool extension is installed and enabled in VSCode (Copilot, Amazon Q, Llama Coder, etc)
+   # Create a blank .go file to be ready to tab into when you start the program (MUST BE .go)
+   
+   # To start the automation script in the VSCode terminal:
+   python attacks/go_language/automateForGo.py
+   ```
+ 
+6. **Run comprehensive Level III test suite:**
    ```bash
    python research_repo/attack_scripts/level_3_test_harness.py
    ```
 
-6. **Generate comparative analysis:**
+7. **Generate comparative analysis:**
    ```bash
    python research_repo/attack_scripts/level_3_comparative_analysis.py
    ```
