@@ -1,7 +1,7 @@
 # Technical Report: Security Attacks on LLM-Based Code Completion Tools
 
 **Course:** Computer System Security  
-**Team:** Aarush, Louis, Ace, Armin, Paul  
+**Team:** Aarush, Luis, Ace, Armin, Paul  
 **Repository:** https://github.com/ohhno961/Security-Attacks-on-LCCTs  
 **Based on:** Cheng et al., *"Security Attacks on LLM-based Code Completion Tools,"* AAAI 2025 (arXiv:2408.11006)  
 **Date:** April 2025  
@@ -29,7 +29,7 @@ This project:
 |--------|------|-------------|
 | Aarush | Project Lead, C++ Architecture | C++ simulator (`cpp_simulator/`), repo structure, README |
 | Ace | Level III Attacks, API Integration | Cross-file attack framework, API runner, test analysis |
-| Louis | Go Language Ablation | Go attack implementations, LCCT testing |
+| Luis | Go Language Ablation | Go attack implementations, LCCT testing |
 | Armin | API Testing & Results | `api_attack_runner.py`, `api_results.csv`, GPT-3.5 & GPT-4o testing |
 | Paul | Research & Defense | Citations, remediation analysis (`llm_attack_solutions.pdf`) |
 
