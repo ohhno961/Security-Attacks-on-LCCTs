@@ -3,7 +3,7 @@
 **Classification:** Academic Research — For Educational Purposes Only  
 **Prepared for:** Chief Information Security Officer (CISO)  
 **Prepared by:** Computer System Security Team — Aarush, Luis, Ace, Armin, Paul  
-**Date:** April 2025  
+**Date:** April 2026
 
 ---
 
@@ -44,7 +44,6 @@ Standard safety filters that prevent AI chatbots from producing harmful content 
 | Filename Proxy | GitHub Copilot | 72.5% | 72.5% | IDE Plugin | 🔴 High |
 | Cross-File | GitHub Copilot | 52.3% | 52.3% | IDE Plugin | 🔴 High |
 | Level I — Go | Copilot / Q / Llama | — | 86.25%, 90%, 0% | IDE Plugin | 🔴 Critical — language independent |
-| Level II — Go | Copilot / Q / Llama | — | 100% | IDE Plugin | 🔴 Critical |
 | Level III Multi-file | GPT-4 | — | 90% | Multi-file context | 🔴 Critical — undetectable pattern |
 | API (Level I + II) | GPT-3.5 / GPT-4o | — | 8.125% | API | 🟡 Moderate |
 | Direct Chat | GPT-4o / DeepSeek / Gemini / Grok | — | 0% | Chat Interface | 🟢 Low |
