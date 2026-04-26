@@ -5,7 +5,7 @@ import csv
 
 # CONFIGURATION
 # Update this path to match exactly where your CSV is located
-DATA_FILE = "research_repo/data/forbidden_questions.csv"
+DATA_FILE = "data/forbidden_questions_original.csv"
 PAUSE_FOR_IDE = 10
 COMPLETION_WAIT = 5 # Increased more for llama coder and Amazon Q latency
 
