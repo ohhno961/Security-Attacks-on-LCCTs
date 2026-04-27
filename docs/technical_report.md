@@ -25,7 +25,7 @@ This project reproduces, extends, and analyzes the attack framework described in
 |--------|------|-------------|
 | Aarush | Project Lead, C++ Architecture | C++ simulator (`cpp_simulator/`), repo structure, README, GitHub management |
 | Ace | Level III Attacks, API Integration | Cross-file contextual attack framework, test harness, Level III analysis, API runner |
-| Louis | Go Language Ablation | Go translations of Level I and II attacks, tested against Copilot, Amazon Q, Llama-Coder |
+| Luis | Go Language Ablation | Go translations of Level I and II attacks, tested against Copilot, Amazon Q, Llama-Coder |
 | Armin | API Testing and Results | `api_attack_runner.py`, `api_results.csv`, GPT-3.5 and GPT-4o results collection |
 | Paul | Scholarly Lineage, Defense Research | Two scholarly paper citations, `LLM Attack Solutions.pdf`, remediation analysis |
 
