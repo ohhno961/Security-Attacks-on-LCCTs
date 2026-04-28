@@ -298,6 +298,6 @@ Security-Attacks-on-LCCTs/
 ├── data/                   Datasets and API results
 ├── docs/                   Technical report, CISO summary, remediation PDF (Paul)
 ├── results/                Baseline LCCT test results
-├── research_repo/          Original paper baseline scripts
+├─research_repo/          Original paper baseline scripts
 └── output/                 Generated attack payloads (gitignored)
 ```
