@@ -49,7 +49,7 @@ Total failures        : 0
 3. **Install required dependencies:**
    *(Ensure `pyautogui` for IDE automation and `openai` for general LLM API attacks are listed in our `requirements.txt`)*
    ```bash
-   pip install -r requirements.txt
+   pip3 install -r requirements.txt
    ```
 4. **Run the baseline testing:**
    ```bash
