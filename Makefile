@@ -1,5 +1,3 @@
-# Root Makefile for LCCT Security Attack Simulator
-
 build:
 	$(MAKE) -C cpp_simulator
 	cp cpp_simulator/lcct_simulator ./lcct_simulator
@@ -13,4 +11,3 @@ clean:
 	rm -f ./lcct_simulator
 
 .PHONY: build run clean
-EOF
