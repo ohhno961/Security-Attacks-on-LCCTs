@@ -141,15 +141,15 @@ Total failures        : 0
 **Author:** Luis  
 **Location:** `attacks/go_language/`
 
-To validate the generalizability of attacks across programming languages, Level I and Level II attacks were translated into Go and tested against three LCCTs using the `automateForGo.py` automation script.
+To validate the generalizability of attacks across programming languages, Level I and Level II attacks were translated into Go and tested against three LCCTs using the `automateForGo.py` and `automateLvl2Go.py` automation script.
 
 | LCCT | Level I ASR | Level II ASR |
 |------|------------|-------------|
 | GitHub Copilot | 86.25% | - |
-| Amazon Q | 90% | - |
-| Llama-Coder | 0% | - |
+| Amazon Q | 90% | 5% |
+| Llama-Coder | 0% | 0% |
 
-This exceeds the Python baseline reported in the paper (Copilot Level I: 99.4%, Level II: 41.3%), consistent with the paper's finding in Table 6 that Go achieves higher ASR than Python — attributed to the smaller proportion of Go code in LCCT training datasets.
+The Level 1 ASR exceeds the Python baseline reported in the paper (Amazon Q Level I: 46.3%, Our result: 90%), consistent with the paper's finding in Table 6 that Go achieves higher ASR than Python — attributed to the smaller proportion of Go code in LCCT training datasets.
 
 ---
 
