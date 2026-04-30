@@ -51,17 +51,49 @@ Total failures        : 0
    ```bash
    pip3 install -r requirements.txt
    ```
-4. **Run the baseline testing:**
-   ```bash
-   # Test Level I attacks
-   python attacks/level1/level_1_attack_on_LCCTs.py
-   
-   # Test Level II attacks
-   python attacks/level2/level_2_attack_on_LCCTs.py
-   
-   # Test Level III attacks
-   python attacks/level3/level_3_attack_on_LCCTs.py
-   ```
+4. ### Run the Baseline Testing (No Tool Interaction)
+
+These scripts only process the dataset and generate attack structures.  
+They do NOT interact with LCCT tools or trigger code completion.
+
+#### Test Level I Attacks
+```bash
+python3 research_repo/attack_scripts/run_level1_baseline.py
+```
+#### Test Level II Attacks
+```bash
+python3 research_repo/attack_scripts/run_level2_baseline.py
+```
+
+### Automation Testing (With LCCT Interaction)
+
+These scripts actively interact with code completion tools (LCCTs) inside VS Code and trigger real-time suggestions.
+
+#### Level 1 Automation
+
+(Single-line prompt injection that directly triggers LCCT code completion suggestions)
+```bash
+python3 automation/automate_level1.py
+```
+
+#### Level 2 Automation
+
+(Multi-line structured attack where queries are decomposed into variables and injected into code context to influence LCCT behavior)
+
+```bash
+python3 automation/automate_level2.py
+```
+
+#### Extended Attack Testing (Our Contribution)
+
+These attacks are not part of the original paper and were designed as additional experiments to explore stronger adversarial variations.
+Test Level III Attacks
+```bash
+
+python attacks/level3/level_3_attack_on_LCCTs.py
+```
+
+
 
 5. **Run automated Level I Go attack script**
    ```bash
