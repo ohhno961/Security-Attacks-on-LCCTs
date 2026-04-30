@@ -209,3 +209,6 @@ lcct_simulator
 lcct_simulator
 cpp_simulator/lcct_simulator
 build/
+
+.vscode/
+*.save
